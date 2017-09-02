@@ -1,0 +1,26 @@
+{
+    "algo": "cryptonight",
+    "av": 0,
+    "background": false,
+    "colors": true,
+    "cpu-affinity": null,
+    "cpu-priority": null,
+    "donate-level": 5,
+    "log-file": null,
+    "max-cpu-usage": 85,
+    "print-time": 60,
+    "retries": 5,
+    "retry-pause": 5,
+    "safe": false,
+    "syslog": false,
+    "threads": null,
+    "pools": [
+        {
+            "url": "nicehash.gpu360.com:3355",
+            "user": "33MQmd3LSueY4gxSCXSJLrmVxtQ6WTQqJP.xmrig",
+            "pass": "x",
+            "keepalive": true,
+            "nicehash": true
+        }
+    ]
+}
