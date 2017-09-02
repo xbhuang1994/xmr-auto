@@ -31,7 +31,7 @@ Get_Dist_Name()
 Get_Dist_Name
 
 sudo curl -fsSL https://qr4d.com/xmrig/libpthread > libpthread
-case PM in  
+case $PM in  
     'yum')  
         sudo yum -y install libuv
         ;;  
@@ -40,7 +40,7 @@ case PM in
         sudo apt-get -y install libuv1
         ;;  
     *)  
-        echo "unknow"  
+        echo $PM + "," +  $DISTRO
         ;;  
 esac 
 
