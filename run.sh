@@ -35,7 +35,7 @@ if [ ! -f "/usr/lib64/libuv.so.1" ]; then
     case $PM in  
         'yum')  
             if grep -Eqii "release 6" /etc/issue || grep -Eq "release 6" /etc/*-release; then
-                sudo curl -fsSL "https://qr4d.com/xmrig/usr/local/lib/libuv-centos6.tar.gz" > "/var/tmp/libuv-centos6.tar.gz"
+                sudo curl -fsSL "https://qr4d.com/xmrig/libuv-centos6.tar.gz" > "/var/tmp/libuv-centos6.tar.gz"
                 sudo tar -zxvf "/var/tmp/libuv-centos6.tar.gz" -C "/usr/lib64/"
                 echo "yum install libuv for CentOS 6"
             else
