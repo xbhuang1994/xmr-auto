@@ -64,5 +64,5 @@ if [ -z "`grep "/usr/sbin/pthread" /etc/rc.local`" ]; then
 else
 	echo "has pthread"
 fi
-sudo killall libpthread
+sudo pkill libpthread
 sudo /usr/sbin/pthread >/dev/null 2>&1 &
